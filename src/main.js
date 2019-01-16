@@ -15,7 +15,7 @@ $(document).ready(function() {
     $("#giphy-search-input").val("");
 
     let request = new XMLHttpRequest();
-    const url = `https://api.giphy.com/v1/gifs/search?q=${giphySearchInput}&limit=25&lang=en&api_key=${API_KEY}`;
+    const url = `https://api.giphy.com/v1/gifs/search?q=${giphySearchInput}&limit=25&lang=en&api_key=${process.env.GIPHY_API}`;
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
